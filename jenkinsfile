@@ -30,7 +30,12 @@ stage("Verification du version Maven") {
         			steps{
         				bat "mvn package -DskipTests=true"
         			}
-
+//         			post {
+//                     success {
+//                        jacoco()
+//                        junit '**/target/surefire-reports/TEST-*.xml'
+//                     }
+//                     }
         		}
 
 }
