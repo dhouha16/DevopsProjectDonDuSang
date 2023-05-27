@@ -16,8 +16,9 @@ pipeline {
 
        stage("Verification du version Maven") {
            steps {
-                bat "cd DonDuSangBackend"
-                bat "mvn -version"
+                 dir('DonDuSangBackend') {
+                 sh 'mvn clean'
+                }
             }
         }
         stage("Supprimer le contenu du dossier target") {
