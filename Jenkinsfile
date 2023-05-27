@@ -32,8 +32,9 @@ pipeline {
                 }
         stage ("Creation du livrable"){
         			steps{
-                        bat "cd DonDuSangBackend"
+                         dir('DonDuSangBackend') {
         				bat "mvn package -DskipTests=true"
+                         }
         			}
 //         			post {
 //                     success {
