@@ -6,7 +6,7 @@ pipeline {
 
 //    }
 
-    // stages {
+     stages {
     //   stage ('GIT') {
     //        steps {
     //           echo "Getting Project from Git";
