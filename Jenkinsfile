@@ -70,13 +70,15 @@ pipeline {
                 	 }
                	}
 
-        // stage("Deploiement dans nexus ") {
-        //              steps{
-        //               // If you are using Windows then you should use "bat" step
-        //               // Since unit testing is out of the scope we skip them
-        //         bat "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8086/repository/maven-releases/ -Dfile=target/timesheet-ci-1.0.jar"
-        //                 }
-        //         }
+        stage("Deploiement dans nexus ") {
+                     steps{
+                      // If you are using Windows then you should use "bat" step
+                      // Since unit testing is out of the scope we skip them
+                 dir('DonDuSangBackend') {
+                bat "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8086/repository/maven-releases/ -Dfile=target/timesheet-ci-1.0.jar"
+                        }
+                     }
+                }
 
     }
 
