@@ -64,7 +64,7 @@ pipeline {
 
         stage("Analyse avec Sonar ") {
                 	steps {
-                   	bat "mvn sonar:sonar -Dsonar.login=squ_db85c1e54c0b219a656e9a1bc387934b0c2517a6"
+                   	bat "mvn sonar:sonar -Dsonar.login=sqp_a3df0881656a94ad229b9e074d72bb143c165667"
                 	 }
                	}
 
