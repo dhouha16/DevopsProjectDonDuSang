@@ -62,6 +62,29 @@ pipeline {
 //         			}
 //         		}
 
+        stage('Build pfa-donDuSang') {
+            steps {
+                dir('frontend') {
+                sh 'npm install -f'
+                sh 'npm run build'
+                }
+            }
+            }
+        
+        stage('Deploy') {
+      steps {
+        dir('backend') {
+          sh 'docker build -t dhouha17/donfrontend .'
+          sh 'docker run -d -p 8080:8080 dhouha17/donfrontend'
+        }
+        
+        dir('frontend') {
+          sh 'docker build -t dhouha17/donbackend .'
+          sh 'docker run -d -p 80:80 dhouha17/donbackend'
+        }
+      }
+    }
+
         stage("Analyse avec Sonar ") {
                 	steps {
                      dir('DonDuSangBackend') {
