@@ -64,7 +64,7 @@ pipeline {
 
         stage('Build pfa-donDuSang') {
             steps {
-                dir('frontend') {
+                dir('pfa-donDuSang') {
                 sh 'npm install -f'
                 sh 'npm run build'
                 }
@@ -73,12 +73,12 @@ pipeline {
         
         stage('Deploy') {
       steps {
-        dir('backend') {
+        dir('DonDuSangBackend') {
           sh 'docker build -t dhouha17/donfrontend .'
           sh 'docker run -d -p 8080:8080 dhouha17/donfrontend'
         }
         
-        dir('frontend') {
+        dir('DonDuSangBackend') {
           sh 'docker build -t dhouha17/donbackend .'
           sh 'docker run -d -p 80:80 dhouha17/donbackend'
         }
