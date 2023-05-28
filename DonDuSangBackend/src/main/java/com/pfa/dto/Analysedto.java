@@ -5,16 +5,11 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.pfa.entitties.DemandePersonne;
+
 @Setter
 @Getter
 @Data
 @NoArgsConstructor
-
-
 public class Analysedto {
 	private Long idReponse;
 	private Date date;
