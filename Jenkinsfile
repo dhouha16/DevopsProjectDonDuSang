@@ -16,8 +16,9 @@ pipeline {
 
        stage("Verification du version Maven") {
            steps {
-                bat "cd DonDuSangBackend"
+               dir('DonDuSangBackend') {
                 bat "mvn -version"
+               }
             }
         }
         stage("Supprimer le contenu du dossier target") {
@@ -100,7 +101,7 @@ pipeline {
                       // If you are using Windows then you should use "bat" step
                       // Since unit testing is out of the scope we skip them
                  dir('DonDuSangBackend') {
-                bat "mvn deploy:deploy-file -DgroupId=com.pfa -DartifactId=don -Dversion=2.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8086/repository/maven-releases/ -Dfile=target/don-2.0.jar"
+                bat "mvn deploy:deploy-file -DgroupId=com.pfa -DartifactId=don -Dversion=3.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8086/repository/maven-releases/ -Dfile=target/don-3.0.jar"
                         }
                      }
                 }
