@@ -47,7 +47,9 @@ pipeline {
 
         stage ("Lancement des Tests Unitaires"){
         		steps{
+               dir('DonDuSangBackend') {
         			bat "mvn test"
+               }
         				}
         		}
 
