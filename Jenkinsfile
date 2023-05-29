@@ -45,11 +45,11 @@ pipeline {
         		}
 
 
-        // stage ("Lancement des Tests Unitaires"){
-        // 		steps{
-        // 			bat "mvn test"
-        // 				}
-        // 		}
+        stage ("Lancement des Tests Unitaires"){
+        		steps{
+        			bat "mvn test"
+        				}
+        		}
 
 //         stage('Jacoco Test '){
 //         			steps{

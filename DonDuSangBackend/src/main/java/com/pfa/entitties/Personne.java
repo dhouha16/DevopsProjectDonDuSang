@@ -81,7 +81,9 @@ public class Personne implements Serializable{
 			this.sexe = sexe;
 			
 		}
-		public int getCin() {
+
+
+    public int getCin() {
 			return cin;
 		}
 		public void setCin(int cin) {
