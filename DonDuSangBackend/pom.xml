@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.pfa</groupId>
 	<artifactId>don</artifactId>
-	<version>3.0</version>
+	<version>4.0</version>
 	<name>DonDuSang</name>
 	<description>don du sang</description>
 	<properties>
